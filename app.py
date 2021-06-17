@@ -9,8 +9,11 @@ def index():
 
 @app.route('/generate', methods=['POST'])
 def generate():
-    report = Report((int(date) for date in request.form.get('start').split("-")), (int(date) for date in request.form.get('start').split("-")))
-    report.produce_excel(request.form.get('key'))
+    try:
+        report = Report((int(date) for date in request.form.get('start').split("-")), (int(date) for date in request.form.get('start').split("-")))
+        report.produce_excel(request.form.get('key'))
+    except Exception as e:
+        return{'success': False, 'e': e}
 
     return {'success': True}
 

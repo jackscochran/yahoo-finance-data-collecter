@@ -19,21 +19,14 @@ $(document).ready(function(){
             type: 'POST',
             dataType: 'JSON',
             data: $(this).serializeArray(),
-            success: function(){
+            success: function(data){
                 $('#generate').hide()
                 $('#processing').hide()
                 $('#download').show()
                 $('#download-page, #generate-page').prop('disabled', false)
-
-            },
-            error: function(){
-                $('#generate').show()
-                $('#processing').hide()
-                $('#download').hide()
-                $('#download-page, #generate-page').prop('disabled', false)
-
-
-                alert("ERROR")
+                if(!data['success']){
+                    alert(data['e']);
+                }
             }
         })
     })
