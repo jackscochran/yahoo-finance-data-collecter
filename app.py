@@ -13,7 +13,8 @@ def generate():
         report = Report((int(date) for date in request.form.get('start').split("-")), (int(date) for date in request.form.get('start').split("-")))
         report.produce_excel(request.form.get('key'))
     except Exception as e:
-        return{'success': False, 'e': e}
+        print(e)
+        return{'success': False}
 
     return {'success': True}
 
