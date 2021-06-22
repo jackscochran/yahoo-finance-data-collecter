@@ -83,7 +83,7 @@ class Company():
                 for pointer in adresses['financialAPI'][item]:
                     try:
                         filtered_response = filtered_response[pointer]
-                    except KeyError or IndexError:
+                    except:
                         filtered_response = 1
                         break
 
@@ -105,7 +105,6 @@ class Company():
     def reload(self, new_ticker):
         self.ticker = new_ticker
         self.load_data()
-
 
     def get_data(self, data_point):
         return self.data.get(data_point, None)

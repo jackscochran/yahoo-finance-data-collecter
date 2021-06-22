@@ -11,21 +11,6 @@ h2 {
     padding-bottom: 20px;
 }
 
-.loading{
-    width: 0%;
-    animation-name: load-bar;
-    animation-duration: 30s;
-    animation-fill-mode:forwards;
-}
-
-@keyframes load-bar {
-    0%{
-        width: 0%
-    }
-    100%{
-        width: 100%
-    }
-}
 
 
 
