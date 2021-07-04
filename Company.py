@@ -86,6 +86,10 @@ class Company():
                     except:
                         filtered_response = 1
                         break
+                
+                # change any financial data from 0 to 1
+                if filtered_response == 0:
+                    filtered_response = 1
 
                 self.data[years_ago][item] = filtered_response     
 
