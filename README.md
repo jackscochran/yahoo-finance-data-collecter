@@ -1,0 +1,4 @@
+# Yahoo Finance API using Rapid API key
+This HTML code is for a web application that allows users to request stock data for a given time period and download the data as an Excel file. The app includes a navigation bar with buttons for generating and downloading the report, as well as a form for inputting the start and end dates and a RapidAPI key.
+
+The backend server is written in Python using the Flask framework. The server uses the Company and Report classes to retrieve and process the stock data, and the generate_ticker_list and save_sheet functions to create the Excel file. The server has routes for rendering the HTML template, handling form submissions, and serving the Excel file for download.
